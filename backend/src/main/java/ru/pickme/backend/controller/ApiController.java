@@ -1,4 +1,5 @@
 package ru.pickme.backend.controller;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +30,7 @@ public class ApiController {
     }
 
     @PostMapping("/users")
-    public ResponseEntity<User> addUser(@RequestBody User user){
+    public ResponseEntity<User> addUser(@Valid @RequestBody User user){
         User createdUser = userService.addUser(user);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -37,7 +38,7 @@ public class ApiController {
     }
 
     @PutMapping("/users/{id}")
-    public ResponseEntity<User> editUser(@RequestBody User user, @PathVariable int id){
+    public ResponseEntity<User> editUser(@Valid @RequestBody User user, @PathVariable int id){
         Optional<User> updatedUser = userService.editUser(user,id);
         return updatedUser
                 .map(ResponseEntity::ok)
