@@ -10,10 +10,10 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
-public class ApiController {
+public class CRUDController {
     private final UserService userService;
 
-    public ApiController(UserService userService) {
+    public CRUDController(UserService userService) {
         this.userService = userService;
     }
 
