@@ -17,14 +17,14 @@ public class ChatRoom {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private int id;
 
     @Column(name="chat_id")
-    private String chatId;
+    private int chatId;
 
     @Column(name="sender_id")
-    private String senderId;
+    private int senderId;
 
     @Column(name = "recipient_id")
-    private String recipientId;
+    private int recipientId;
 }

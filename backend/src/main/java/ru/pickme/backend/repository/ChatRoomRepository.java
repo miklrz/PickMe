@@ -6,4 +6,5 @@ import ru.pickme.backend.model.ChatRoom;
 
 @Repository
 public interface ChatRoomRepository extends JpaRepository<ChatRoom, Integer> {
+    public ChatRoom findBySenderIdAndRecipientId(int senderId, int recipientId);
 }

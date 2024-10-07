@@ -10,7 +10,7 @@ CREATE TABLE users (
 
 CREATE TABLE messages (
                           id SERIAL PRIMARY KEY,
-                          chat_id VARCHAR(255) NOT NULL,
+                          chat_id int NOT NULL,
                           sender_id INT NOT NULL,
                           recipient_id INT NOT NULL,
                           content TEXT NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE messages (
 
 CREATE TABLE chatrooms (
                            id SERIAL PRIMARY KEY,
-                           chat_id VARCHAR(255) NOT NULL UNIQUE,
+                           chat_id INT NOT NULL UNIQUE,
                            sender_id INT NOT NULL,
                            recipient_id INT NOT NULL,
                            FOREIGN KEY (sender_id) REFERENCES users(id) ON DELETE CASCADE,
